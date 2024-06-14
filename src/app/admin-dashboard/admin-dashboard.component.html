@@ -1,0 +1,18 @@
+<div class="card-container">
+    <div *ngFor="let cart of carts">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ cart.username }}</h5>
+          <p class="card-text">Email: {{ cart.email }}</p>
+          <p class="card-text">GSTIN: {{ cart.gstin }}</p>
+          <p class="card-text">GST Type: {{ cart.gstType }}</p>
+          <p class="card-text">Contact Number: {{ cart.contactNumber }}</p>
+          <p class="card-text">Total: {{ cart.totalPrice }}</p>
+          <p class="card-text">GST: {{ cart.gst }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <button class="to-pay-btn" routerLink="/payment">TO PAY</button>
+  

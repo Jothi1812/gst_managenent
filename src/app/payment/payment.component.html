@@ -1,0 +1,25 @@
+
+
+<div class="payment-form">
+  <div class="form-group">
+    <label for="gstin">GSTIN Number:</label>
+    <input type="text" id="gstin" name="gstin" [(ngModel)]="gstinNumber" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="email" class="form-control">
+  </div>
+
+  <button (click)="calculateTotalGST()" class="btn btn-primary">Calculate Total GST</button>
+</div>
+
+<div *ngIf="totalGST !== undefined" class="result">
+  <p style="color: antiquewhite;">Total GST: {{ totalGST }}</p>
+  <google-pay-button
+      environment="TEST"
+      buttonSizeMode="fill"
+      [paymentRequest]="paymentRequest"
+      (loadpaymentdata)="onLoadPaymentData($event)"
+      ></google-pay-button>
+</div>

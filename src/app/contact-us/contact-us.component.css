@@ -1,0 +1,55 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Basic styling */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+  
+  .contact-us {
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: pink;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 1, i.1);
+  }
+  
+  .contact-info {
+    margin-top: 20px;
+  }
+  
+  .icon {
+    margin-right: 10px;
+    font-size: 20px;
+    vertical-align: middle;
+  }
+  
+  /* Styling links */
+  a {
+    color: #e05003;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: darkgreen; /* Updated hover color */
+  }
+  
+  /* Hover effect for paragraphs */
+  .contact-info p {
+    transition: background-color 0.3s ease;
+    padding: 8px;
+    border-radius: 4px;
+  }
+  
+  .contact-info p:hover {
+    background-color: #f8f8f8; /* Updated hover background color */
+  }
+  

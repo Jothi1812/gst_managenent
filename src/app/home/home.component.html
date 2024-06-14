@@ -1,0 +1,100 @@
+<hr/>
+<div class="background">
+<div class="home-container">
+  <nav class="navbar">
+    <ul>
+      <li (click)="toggleSection('about')">&#9658; ABOUT</li>
+      <li (click)="toggleSection('rules')">&#9658; RULES AND REGULATIONS</li>
+      <li (click)="toggleSection('features')">&#9658;FEATURES OF GST</li>
+    </ul>
+  </nav>
+
+  <div class="content">
+      <div class="card" *ngIf="currentSection === 'about'">
+      <h2 style="color: darkblue;">About GST</h2>
+      <p>GST stands for Goods and Services Tax. It is a comprehensive tax levied on the supply of goods and services.</p>
+      <br>
+    
+      <h2 style="color:darkblue">Genesis</h2>
+      
+        <p>The idea of a nationwide GST in India was first proposed by the Kelkar Task Force on Indirect taxes in 2000. The objective was to replace the prevailing complex and fragmented tax structure with a unified system that would simplify compliance, reduce tax cascading, and promote economic integration. The Empowered Committee of State Finance Ministers prepared a design and roadmap, releasing the First Discussion Paper in 2009. The Constitution Amendment Bill was introduced in 2011 but faced challenges regarding compensation to States and other issues.
+        <br><br>
+        
+        The GST Council, consisting of the Union Finance Minister and representatives from all States and Union Territories, was established to make decisions on various aspects of GST, including tax rates, exemptions, and administrative procedures. It played a crucial role in shaping the GST framework in India. On July 1, 2017, GST laws were implemented, replacing a complex web of Central and State taxes. Under the Indian GST, goods and services are categorized into different tax slabs, including 5%, 12%, 18%, and 28%. Some essential commodities are exempted from GST, Gold and job work for diamond attract low rate of taxation. Compensation cess is being levied on demerit goods and ceratin luxury items .
+        <br><br>
+        To prepare for the implementation of GST, extensive efforts were made to build the necessary technological infrastructure and train tax officials and businesses. GST Network (GSTN), a not-for-profit company, was created to provide the IT backbone for the GST system, including taxpayer registration, return filing, and tax payments.
+        <br><br>
+        Since its implementation, the Indian GST has undergone various amendments and refinements based on feedback from businesses and the evolving economic scenario. While the GST implementation initially posed challenges for businesses in terms of understanding the new compliance requirements and adapting to the changes, it has gradually settled into the Indian tax landscape.
+        <br><br>
+        It can be said that the history of GST in India showcases a monumental shift in the country's tax structure, aiming to create a more unified, efficient, and transparent indirect tax regime for the benefit of businesses and the economy as a whole.</p>
+    </div>
+    <div class="card" *ngIf="currentSection === 'rules'">
+      <h2 style="color: darkblue;">Rules and Regulations</h2>
+      <p>GST rules and regulations include the procedures and guidelines for the administration of GST.</p>
+      <br>
+      <h2 style="color: darkblue;">Goods and Services Tax Acts</h2>
+
+<table>
+  <tr>
+    <th>Sl. No.</th>
+    <th>Act</th>
+    <th>As defined in the Goods and Services Tax Act 2017</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Transfer of Property Act 1882</td>
+    <td>“Actionable Claim” shall have the same meaning as assigned to it in Section three of the Transfer of Property Act 1882</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Income Tax Act 1961</td>
+    <td>“Associated Enterprises” shall have the same meaning as assigned it in Section 92 A of the Income Tax Act 1961</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Central Boards of Revenue Act 1963</td>
+    <td>“Board” means the Central Board of Excise and Customs constituted under the Central Boards of Revenue Act 1963</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Goods and Services Tax (Compensation to States) Act</td>
+    <td>“Cess” shall have the same meaning as assigned to it in the Goods and Services Tax (Compensation to States) Act</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Chartered Accountants Act 1949</td>
+    <td>“Chartered Accountant” means a chartered accountant as defined in clause (b) of subsection (1) of section 2 of the Chartered Accountants Act 1949.</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Company Secretaries Act 1980</td>
+    <td>“Company Secretary” means a company secretary as defined in clause (c) of subsection (1) of section 2 of the Company Secretaries Act 1980.</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>Cost And Works Accountants Act 1959</td>
+    <td>“Cost Accountant” means a cost accountant as defined in clause (c) of subsection (1) of section 2 of the Cost And Works Accountants Act 1959.</td>
+  </tr>
+
+  <!-- Add more rows as needed -->
+</table>
+    </div>
+    <div class="card" *ngIf="currentSection === 'features'">
+      <h2>Features of GST</h2>
+      <p>GST has several features including the elimination of cascading tax effects, a comprehensive IT system, and more.</p>
+      <br>
+      <h2 style="color: darkblue;">Salient Features of GST</h2>
+<ul>
+  <li><strong style="color:red;">One Nation, One Tax:</strong> GST replaced multiple indirect taxes levied by the Central and State Governments, such as excise duty, service tax, value-added tax (VAT), and others, bringing uniformity in the tax structure across India and eliminating the cascading effect of taxes.</li>
+  <br>
+  <li><strong style="color: red;">Dual Structure:</strong> GST operates under a dual structure, comprising the Central GST (CGST) levied by the Central Government and the State GST (SGST) levied by the State Governments. In the case of Inter-state transactions, Integrated GST (IGST) is applicable, collected by the Central Government and apportioned to the respective State. Import of goods or services would be treated as inter-state supplies and would be subject to IGST in addition to the applicable customs duties.</li>
+  <br>
+  <li><strong style="color: red;">Destination-based Tax:</strong> GST is a destination-based tax, levied at each stage of the supply chain, from the manufacturer to the consumer. It is applied to the value addition at each stage, allowing for the seamless flow of credits and reducing the tax burden on the end consumer.</li>
+  <br>
+  <li><strong style="color: red;">Input Tax Credit (ITC):</strong> GST allows for the utilization of input tax credit, wherein businesses can claim credit for the tax paid on inputs used in the production or provision of goods and services. This helps avoid double taxation and reduces the overall tax liability.</li>
+</ul>
+    </div>
+    
+  </div>
+</div>
+</div>

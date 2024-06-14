@@ -1,0 +1,86 @@
+<div class="customer-details" *ngIf="!customerDetailsSubmitted">
+  <h3>Customer Details</h3>
+  <form (ngSubmit)="submitCustomerDetails(customerDetailsForm)" #customerDetailsForm="ngForm">
+    <label for="gstin">GSTIN Number:</label>
+    <input type="text" id="gstin" name="gstin" [(ngModel)]="customerDetails.gstin" required pattern="^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$">
+    <div *ngIf="customerDetailsForm.submitted || customerDetailsForm.controls['gstin'].touched">
+      <small *ngIf="customerDetailsForm.controls['gstin'].errors?.['required']">GSTIN is required.</small>
+      <small *ngIf="customerDetailsForm.controls['gstin'].errors?.['pattern']">Invalid GSTIN format.</small>
+    </div>
+    <label for="username">User Name</label>
+    <input type="text" id="username" name="username" [(ngModel)]="customerDetails.username" required pattern="^[A-Za-z][A-Za-z0-9_]{4,29}$">
+    <div *ngIf="customerDetailsForm.submitted || customerDetailsForm.controls['username'].touched">
+      <small *ngIf="customerDetailsForm.controls['username'].errors?.['required']">Name is required.</small>
+      <small *ngIf="customerDetailsForm.controls['username'].errors?.['pattern']">Invalid format.</small>
+    </div>
+    <br>
+    <label for="gstType">Type of GST:</label>
+    <select id="gstType" name="gstType" [(ngModel)]="customerDetails.gstType" required>
+      <option value="Regular">Regular</option>
+      <option value="Composition">Composition</option>
+    </select>
+    <div *ngIf="customerDetailsForm.submitted || customerDetailsForm.controls['gstType'].touched">
+      <small *ngIf="customerDetailsForm.controls['gstType'].errors?.['required']">Type of GST is required.</small>
+    </div>
+
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="customerDetails.email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$">
+    <div *ngIf="customerDetailsForm.submitted || customerDetailsForm.controls['email'].touched">
+      <small *ngIf="customerDetailsForm.controls['email'].errors?.['required']">Email is required.</small>
+      <small *ngIf="customerDetailsForm.controls['email'].errors?.['pattern']">Invalid email format.</small>
+    </div>
+
+    <br>
+    <label for="contactNumber">Contact Number:</label>
+    <input type="tel" id="contactNumber" name="contactNumber" [(ngModel)]="customerDetails.contactNumber" required pattern="^[0-9]{10}$">
+    <div *ngIf="customerDetailsForm.submitted || customerDetailsForm.controls['contactNumber'].touched">
+      <small *ngIf="customerDetailsForm.controls['contactNumber'].errors?.['required']">Contact number is required.</small>
+      <small *ngIf="customerDetailsForm.controls['contactNumber'].errors?.['pattern']">Invalid contact number format.</small>
+    </div>
+
+    <br>
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" [(ngModel)]="customerDetails.address" required></textarea>
+    <div *ngIf="customerDetailsForm.submitted || customerDetailsForm.controls['address'].touched">
+      <small *ngIf="customerDetailsForm.controls['address'].errors?.['required']">Address is required.</small>
+    </div>
+
+    <br>
+    <button type="submit">Submit Details</button>
+  </form>
+</div>
+
+
+<div class="customer-dashboard" *ngIf="customerDetailsSubmitted">
+  <!-- Existing product addition section -->
+  <div class="product-form">
+    <h3>Add Product</h3>
+    <form (submit)="addProduct(productForm)" #productForm="ngForm">
+      <label for="productName">Product Name:</label>
+      <input type="text" id="productName" name="productName" [(ngModel)]="newProduct.name" required>
+      <label for="productPrice">Price:</label>
+      <input type="number" id="productPrice" name="productPrice" [(ngModel)]="newProduct.price" required min="0">
+      <button type="submit" [disabled]="!productForm.valid || newProduct.price <= 0">Add to Cart</button>
+      <div *ngIf="productForm.invalid && (productForm.dirty || productForm.touched)">
+        <p *ngIf="productForm.controls['productName'].errors?.['required']">Product Name is required.</p>
+        <p *ngIf="productForm.controls['productPrice'].errors?.['required']">Price is required.</p>
+        <p *ngIf="productForm.controls['productPrice'].errors?.['min']">Price must be greater than zero.</p>
+      </div>
+    </form>
+  </div>
+
+  <!-- Existing product list section -->
+  <div class="product-list">
+    <h3>Added Products</h3>
+    <ul>
+      <li *ngFor="let product of addedProducts; let i = index">
+        {{ product.name }} - ${{ product.price }}
+        <span class="delete-icon" (click)="deleteProduct(i)">✖</span>
+      </li>
+    </ul>
+    <p>Total Price: ${{ calculateTotalPrice() }}</p>
+    <p>GST (10%): ${{ calculateGST() }}</p>
+    <button (click)="submitCart()">Submit Cart</button>
+  </div>
+</div>

@@ -1,0 +1,170 @@
+.customer-dashboard {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .product-form,
+  .product-list {
+    width: 45%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product-form {
+    background: linear-gradient(45deg, #4CAF50, #008CBA);
+  }
+  
+  .product-list {
+    background: linear-gradient(45deg, #00aaff, #cc5151);
+  }
+  
+  .product-form h3,
+  .product-list h3 {
+    color: #fff;
+  }
+  
+  .product-form input[type="text"],
+  .product-form input[type="number"] {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .product-form input[type="text"]:focus,
+  .product-form input[type="number"]:focus {
+    outline: none;
+    background-color: #fff;
+  }
+  
+  .product-form label,
+  .product-list p,
+  .product-list li {
+    color: #fff;
+  }
+  
+  .product-form button[type="submit"],
+  .product-list button {
+    margin-top: 20px;
+    width: calc(30% );
+    padding: 10px 2px; /* Adjusted padding */
+    border: none;
+    border-radius: 4px;
+    background-color: #f0af0a;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .product-form button[type="submit"]:hover,
+  .product-list button:hover {
+    background-color: #eee;
+  }
+  .delete-icon {
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 16px;
+    color: red; /* Or any other color you prefer */
+  }
+  
+  /* General layout and typography */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h3 {
+  color: #343a40;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  color: #555;
+}
+
+input, select, textarea, button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #45a049;
+  outline: none;
+  box-shadow: 0 0 8px rgba(69, 160, 73, 0.2);
+}
+
+button {
+  background-color: #45a049;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #3d8b40;
+  transform: translateY(-3px);
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.customer-details {
+  background: #ffffff;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.customer-details:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+textarea {
+  resize: vertical; /* Allows vertical resize but not horizontal */
+}
+
+small {
+  color: #e74c3c; /* Error message color */
+  display: block;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+::placeholder {
+  color: #888;
+  opacity: 1; /* Override default opacity */
+}
+
+@media (max-width: 600px) {
+  .customer-details {
+    width: 90%;
+  }
+}

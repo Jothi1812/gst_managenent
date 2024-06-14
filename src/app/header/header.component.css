@@ -1,0 +1,29 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #faf9f8;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0.5,10, 1, 2);
+  }
+  
+  .header-title {
+    flex: 1;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+   
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 18px;
+    margin: 0 10px;
+  }
+  
+  .left, .right {
+    flex-basis: 100px;
+    text-align: center;
+  }
+  

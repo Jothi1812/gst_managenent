@@ -1,0 +1,124 @@
+/* Container for the cards */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align cards to the left */
+  gap: 20px; /* Adjust the gap between cards */
+  padding: 20px; /* Add padding to the container */
+}
+
+/* Card styles */
+.card {
+  width: 280px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: rgba(173, 216, 230, 0.7); /* Light transparent blue background */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin: 0; /* Remove margin to minimize gaps */
+  color: #000; /* Black text color for contrast */
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Card body styles */
+.card-body {
+  padding: 20px;
+  color: #000; /* Black text color for contrast */
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: bolder; /* Make the title bold */
+  margin-bottom: 10px;
+  font-family:cursive;
+  color: #000; /* Ensure title color is black */
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+}
+
+.card-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 50px;
+  height: 4px;
+  background: linear-gradient(45deg, #ff9800, #ff5722); /* Orange to red gradient underline */
+}
+
+.card-text {
+  margin-bottom: 10px;
+  color: #333; /* Dark gray for text */
+  font-weight: normal; /* Ensure card text is not bold */
+  line-height: 1.6;
+}
+
+.card-text:last-child {
+  margin-bottom: 0; /* Remove bottom margin for the last text element */
+}
+
+/* Add a stylish border effect */
+.card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  z-index: -1;
+  background: linear-gradient(45deg,pink,yellow); /* Purple to blue gradient border */
+  border-radius: 15px;
+  transform: scale(0.95);
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover::before {
+  transform: scale(1);
+}
+
+/* Add a subtle animation to the card */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeIn 0.5s ease-in-out;
+}
+.to-pay-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.to-pay-btn:hover {
+  background-color: #45a049; /* Darker Green */
+  transform: translateY(-3px); /* Move button slightly upwards on hover */
+}
+  
